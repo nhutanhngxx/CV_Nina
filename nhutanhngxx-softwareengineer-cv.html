@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Nhựt Anh - Software Engineer CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0xXz1234567890abcdefg..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #e9ecef; /* Light gray background */
+        color: #343a40; /* Darker text */
+      }
+      .cv-container {
+        max-width: 1000px; /* Adjust max width as needed */
+        margin: 2rem auto;
+        background-color: #fff;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        display: flex; /* Use flexbox for main layout */
+        flex-direction: column; /* Default to column for small screens */
+      }
+
+      /* Sidebar styles (left column in the image) */
+      .cv-sidebar {
+        background-color: #343a40; /* Dark background as in the image */
+        color: #f8f9fa; /* Light text color */
+        padding: 2rem;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        text-align: center;
+      }
+      .cv-sidebar img {
+        width: 150px; /* Increased size for photo */
+        height: 150px; /* Increased size for photo */
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #fff; /* White border around image */
+        margin-bottom: 1.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      }
+      .sidebar-section-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 0.5rem;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        word-break: break-word; /* Ensure long links/emails wrap */
+      }
+      .contact-item i {
+        margin-right: 0.75rem;
+        font-size: 1.1rem;
+        color: #adb5bd; /* Light gray for icons */
+      }
+      .contact-item a {
+        color: #f8f9fa;
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+      .gpa-text {
+        font-weight: bold;
+        color: #ced4da;
+      }
+
+      /* Main content styles (right column in the image) */
+      .cv-main-content {
+        padding: 2.5rem;
+        background-color: #fff;
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+      .main-header {
+        margin-bottom: 2rem;
+        text-align: right; /* As in the image */
+      }
+      .main-header h1 {
+        font-size: 3.5rem; /* Larger font for name */
+        font-weight: bold;
+        color: #2c3e50; /* Dark blue */
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+      .main-header .job-title {
+        font-size: 1.5rem;
+        color: #6c757d; /* Gray color for job title */
+        font-style: italic;
+      }
+      .main-section-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #dee2e6;
+      }
+      .text-justify {
+        text-align: justify;
+      }
+      .project-item,
+      .experience-item,
+      .activity-item,
+      .achievement-item {
+        margin-bottom: 1.5rem;
+      }
+      .project-item:last-child,
+      .experience-item:last-child,
+      .activity-item:last-child,
+      .achievement-item:last-child {
+        margin-bottom: 0; /* No margin for last item in a section */
+      }
+      .project-title,
+      .experience-title,
+      .activity-title {
+        font-size: 1.25rem;
+        font-weight: 600; /* Slightly less bold than section title */
+        color: #343a40;
+        margin-bottom: 0.5rem;
+      }
+      .project-description ul,
+      .experience-description ul,
+      .activity-description ul,
+      .achievement-description ul {
+        list-style-type: disc;
+        padding-left: 1.25rem;
+        color: #495057;
+      }
+      .project-description li,
+      .experience-description li,
+      .activity-description li,
+      .achievement-description li {
+        margin-bottom: 0.4rem;
+      }
+      .skill-list li {
+        margin-bottom: 0.4rem;
+      }
+      .skill-category {
+        font-weight: bold;
+        color: #343a40;
+        margin-right: 0.5rem;
+      }
+      .activity-details,
+      .project-tech-stack {
+        font-style: italic;
+        color: #6c757d;
+        font-size: 0.9rem; /* Smaller font for tech stack/details */
+      }
+      .project-link a,
+      .certificate-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: 500;
+        margin-top: 0.5rem;
+        display: inline-block;
+      }
+      .project-link a:hover,
+      .certificate-link a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive adjustments */
+      @media (min-width: 768px) {
+        /* Medium devices and up */
+        .cv-container {
+          flex-direction: row; /* Flex direction to row for larger screens */
+        }
+        .cv-sidebar {
+          flex: 0 0 300px; /* Fixed width for sidebar */
+          min-height: 100%; /* Ensure sidebar takes full height */
+        }
+        .cv-main-content {
+          flex-grow: 1; /* Main content takes remaining space */
+        }
+      }
+      @media (max-width: 767.98px) {
+        /* Small devices (mobile) */
+        .cv-sidebar {
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 0.5rem; /* Round top right for mobile */
+          padding: 1.5rem;
+        }
+        .cv-main-content {
+          border-top-right-radius: 0;
+          border-bottom-left-radius: 0.5rem; /* Round bottom left for mobile */
+          padding: 1.5rem;
+        }
+        .main-header {
+          text-align: center; /* Center name on mobile */
+        }
+        .main-header h1 {
+          font-size: 2.5rem;
+        }
+        .main-header .job-title {
+          font-size: 1.2rem;
+        }
+        .main-section-title {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .sidebar-section-title {
+          margin-top: 1rem;
+          margin-bottom: 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-container">
+      <div class="cv-sidebar">
+        <img
+          src="https://i.ibb.co/xKqFHbsn/2025-05-29-00-25.jpg"
+          alt="Ảnh đại diện"
+          class="rounded-full"
+          style="width: 230px; height: 230px; object-fit: cover"
+        />
+        <h1 class="text-white text-3xl font-extrabold mb-2">
+          NGUYỄN <br />
+          NHỰT ANH
+        </h1>
+        <p class="text-sm text-gray-400 mb-4">Software Engineer</p>
+
+        <div class="sidebar-section">
+          <h3 class="sidebar-section-title">HỌC VẤN</h3>
+          <p class="text-white font-semibold">
+            Đại học Công nghiệp Thành phố Hồ Chí Minh
+          </p>
+          <p class="text-sm text-gray-400">(10/2021 - Hiện tại)</p>
+          <ul class="list-unstyled text-left mt-2">
+            <li class="text-sm mb-1">- Chuyên ngành Kỹ thuật phần mềm</li>
+            <li class="text-sm">
+              - GPA dự kiến tốt nghiệp: <span class="gpa-text">3.20</span>
+            </li>
+            <li class="text-sm">
+              - Các môn học ấn tượng: Lập trình WWW (Java), Lập trình thiết bị
+              di động, Công nghệ mới trong phát triển ứng dụng CNTT
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section mt-4">
+          <h3 class="sidebar-section-title">LIÊN HỆ</h3>
+          <ul class="list-unstyled text-left">
+            <li class="contact-item">
+              <i class="fas fa-calendar-alt"></i>
+              <span class="text-sm">17/03/2003</span>
+            </li>
+            <li class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+84939968135" class="text-sm">+84 939 968 135</a>
+            </li>
+            <li class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:nhutanhngx@gmail.com" class="text-sm"
+                >nhutanhngx@gmail.com</a
+              >
+            </li>
+            <li class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span class="text-sm">Hồ Chí Minh, Việt Nam</span>
+            </li>
+            <li class="contact-item">
+              <i class="fab fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/nhut-anh-nguyen-a79994247/"
+                target="_blank"
+                class="text-sm"
+                >NHUT ANH NGUYEN</a
+              >
+            </li>
+            <li class="contact-item">
+              <i class="fab fa-github"></i>
+              <a
+                href="https://github.com/nhutanhngxx"
+                target="_blank"
+                class="text-sm"
+                >github.com/nhutanhngxx</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section mt-4">
+          <h3 class="sidebar-section-title">NGÔN NGỮ</h3>
+          <ul class="list-unstyled text-left">
+            <li class="text-sm mb-1">
+              <span class="font-semibold text-white">Tiếng Việt:</span> Ngôn ngữ
+              mẹ đẻ
+            </li>
+            <li class="text-sm">
+              <span class="font-semibold text-white">Tiếng Anh:</span> Cơ bản
+              (Dự kiến TOEIC 550)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cv-main-content">
+        <header class="main-header">
+          <h1 class="text-gray-900 mb-4">
+            Thực Tập Sinh Ngành Công Nghệ Thông Tin
+          </h1>
+          <p class="job-title">CÔNG TY TNHH THƯƠNG MẠI VÀ DỊCH VỤ NINA</p>
+        </header>
+
+        <section class="mb-5">
+          <h2 class="main-section-title">MỤC TIÊU NGHỀ NGHIỆP & TÓM TẮT</h2>
+          <p class="text-gray-700 text-justify mb-3">
+            Sinh viên năm cuối ngành Kỹ thuật Phần mềm với niềm đam mê sâu sắc
+            với công nghệ tiên tiến và thiết kế UI/UX sáng tạo. Có kinh nghiệm
+            phát triển ứng dụng web và mobile với ReactJS, Node.js, và Java.
+            Mong muốn ứng dụng các kỹ năng lập trình và tư duy thiết kế để tạo
+            ra các giải pháp phần mềm đột phá, đồng thời không ngừng học hỏi và
+            phát triển trong môi trường chuyên nghiệp.
+          </p>
+          <ul class="list-unstyled text-gray-700">
+            <li>
+              <strong>Mục tiêu ngắn hạn:</strong> Hoàn thành xuất sắc kỳ thực
+              tập, đóng góp tích cực vào các dự án thực tế, và trau dồi chuyên
+              môn sâu hơn về phát triển Full-stack/UI/UX.
+            </li>
+            <li>
+              <strong>Mục tiêu dài hạn:</strong> Trở thành một chuyên gia công
+              nghệ hàng đầu, dẫn dắt các dự án phát triển sản phẩm đột phá và
+              tham gia vào việc xây dựng cộng đồng công nghệ.
+            </li>
+          </ul>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="main-section-title">KỸ NĂNG</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <h4 class="font-semibold text-gray-800 mb-2">
+                Ngôn ngữ Lập trình:
+              </h4>
+              <ul class="list-unstyled text-gray-700 skill-list">
+                <li>• Java</li>
+                <!-- <li>• Python</li> -->
+                <li>• JavaScript</li>
+                <li>• HTML/CSS</li>
+              </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h4 class="font-semibold text-gray-800 mb-2">
+                Frameworks & Thư viện:
+              </h4>
+              <ul class="list-unstyled text-gray-700 skill-list">
+                <li>• ReactJS</li>
+                <li>• React Native</li>
+                <li>• Node.js</li>
+                <li>• Bootstrap, Tailwind CSS</li>
+              </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h4 class="font-semibold text-gray-800 mb-2">Thiết kế UI/UX:</h4>
+              <ul class="list-unstyled text-gray-700 skill-list">
+                <li>• Figma</li>
+                <!-- <li>• Adobe XD (Cơ bản)</li> -->
+                <li>• Nguyên tắc thiết kế UX</li>
+                <li>• User Research</li>
+              </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h4 class="font-semibold text-gray-800 mb-2">
+                Công cụ & Cơ sở dữ liệu:
+              </h4>
+              <ul class="list-unstyled text-gray-700 skill-list">
+                <li>• Git/GitHub</li>
+                <li>• VS Code/Cursor, IntelliJ IDEA</li>
+                <li>• Docker & MySQL, MongoDB</li>
+              </ul>
+            </div>
+            <div class="col-md-12">
+              <h4 class="font-semibold text-gray-800 mb-2">Kỹ năng mềm:</h4>
+              <ul class="list-unstyled text-gray-700 skill-list">
+                <li>• Kỹ năng giao tiếp khá tốt</li>
+                <li>
+                  • Kỹ năng giải quyết vấn đề và làm việc theo nhóm ổn định
+                </li>
+                <li>
+                  • Có khả năng học hỏi và thích nghi với môi trường áp lực cao
+                </li>
+                <li>
+                  • Có khả năng làm việc độc lập, chủ động, trách nhiệm, nhiệt
+                  tình trong công việc, trung thực, chăm chỉ
+                </li>
+                <li>• Quản lý thời gian và dự án tương đối hiệu quả</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section class="mb-5">
+          <h2 class="main-section-title">KINH NGHIỆM LÀM VIỆC</h2>
+          <div class="experience-item">
+            <h3 class="experience-title">Thực tập sinh lập trình viên</h3>
+            <p class="text-gray-600 italic mb-2">
+              Công ty ABC, [Thành phố] | 06/2023 - 08/2023
+            </p>
+            <ul class="text-gray-700">
+              <li>
+                Hỗ trợ phát triển các tính năng cho ứng dụng web nội bộ, cải
+                thiện hiệu suất tải trang lên 15% bằng cách tối ưu hóa query và
+                tối giản hóa code.
+              </li>
+              <li>
+                Thiết kế giao diện người dùng (UI) chi tiết với Figma, đảm bảo
+                đáp ứng 100% yêu cầu thiết kế và nguyên tắc UX.
+              </li>
+              <li>
+                Tham gia tích cực vào nhóm phát triển 5 người, đóng góp ý tưởng
+                sáng tạo và cải tiến quy trình phát triển theo phương pháp
+                Agile.
+              </li>
+              <li>
+                Thành thạo sử dụng Git để quản lý mã nguồn, thực hiện pull
+                requests và phối hợp hiệu quả trong nhóm.
+              </li>
+            </ul>
+          </div>
+        </section> -->
+
+        <section class="mb-5">
+          <h2 class="main-section-title">DỰ ÁN NỔI BẬT ĐÃ THAM GIA</h2>
+
+          <div class="project-item">
+            <h3 class="project-title">
+              Website Hệ thống Quản lý Thư viện Mượn/trả sách
+            </h3>
+            <p class="project-tech-stack mb-2">
+              Kiến trúc: Microservices (Backend), Công nghệ: React.js, Tailwind
+              CSS (Frontend), PostgreSQL (Database), Docker, Kubernetes,..
+            </p>
+            <ul class="text-gray-700">
+              <li class="mb-2">
+                Thiết kế và triển khai kiến trúc Microservices cho phần Backend,
+                đảm bảo khả năng mở rộng và dễ dàng bảo trì.
+              </li>
+              <li class="mb-2">
+                Xây dựng giao diện người dùng responsive và hiện đại bằng
+                React.js và Tailwind CSS, tối ưu hóa trải nghiệm cho người dùng.
+              </li>
+              <li class="mb-2">
+                Phát triển các tính năng quản lý sách, độc giả, mượn trả, tìm
+                kiếm nâng cao.
+              </li>
+              <li class="mb-2">
+                Tích hợp cơ sở dữ liệu MySQL cho dữ liệu quan hệ và MongoDB cho
+                dữ liệu phi quan hệ.
+              </li>
+              <li>
+                <span class="project-link"
+                  ><a
+                    href="https://github.com/nhutanhngxx/iLabrix_SubProjectKTTKPM.git"
+                    target="_blank"
+                    >Xem mã nguồn/Demo -
+                    nhutanhngxx/iLabrix_SubProjectKTTKPM.git</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-item">
+            <h3 class="project-title">Ứng dụng Nhắn tin iChat</h3>
+            <p class="project-tech-stack mb-2">
+              Công nghệ: React Native (Mobile) và ReactJS (Web), Node.js
+              (Backend), Socket.IO, Firebase, MongoDB, AWS S3
+            </p>
+            <ul class="text-gray-700">
+              <li class="mb-3">
+                Ứng dụng nhắn tin tức thời trên Web và Mobile, áp dụng công nghệ
+                hiện đại, tập trung vào tính linh hoạt, bảo mật và hiệu quả.
+              </li>
+              <li>
+                <strong>Thiết kế UI/UX:</strong> Tạo giao diện trực quan, hiện
+                đại, thân thiện trên Figma cho ứng dụng mobile.
+              </li>
+              <li>
+                <strong>Chức năng trò chuyện:</strong> Lập trình tính năng chat
+                thời gian thực (gửi/nhận tin nhắn, emoji, trạng thái tin
+                nhắn,..).
+              </li>
+              <li class="mb-3">
+                <strong>Quản lý thông tin người dùng:</strong> Xây dựng module
+                quản lý hồ sơ, tài khoản (đăng ký, đăng nhập, đổi mật khẩu), đảm
+                bảo bảo mật và trải nghiệm mượt mà.
+              </li>
+              <li>
+                Ứng dụng đạt được mức độ ổn định 95%, đạt kết quả cao trong quá
+                trình thực hiện và báo cáo cuối kỳ cho môn học
+              </li>
+              <li>
+                <span class="project-link"
+                  ><a
+                    href="https://github.com/nhutanhngxx/iChat_SubProjectCNM.git"
+                    target="_blank"
+                    >Xem mã nguồn/Demo - nhutanhngxx/iChat_SubProjectCNM.git</a
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="main-section-title">GIẢI THƯỞNG & THÀNH TÍCH</h2>
+          <div class="achievement-item">
+            <h3 class="achievement-title">
+              Học sinh giỏi Tin học (Pascal) cấp tỉnh (2016-2017)
+            </h3>
+            <p class="text-gray-600 italic mb-2">
+              Học sinh giỏi tin học | 2017
+            </p>
+            <!-- <ul class="text-gray-700">
+              <li>
+                Đạt giải Ba với dự án giao diện ứng dụng di động sáng tạo, giải
+                quyết [vấn đề cụ thể] cho người dùng.
+              </li>
+              <li>
+                Được đánh giá cao về tính khả dụng, tính thẩm mỹ và khả năng đột
+                phá.
+              </li>
+            </ul> -->
+          </div>
+          <div class="achievement-item">
+            <h3 class="achievement-title">
+              TOP 322 Cuộc thi ICPC Quốc gia 2021
+            </h3>
+            <p class="text-gray-600 italic mb-2">IUH.RocketBunny | 2021</p>
+          </div>
+        </section>
+
+        <section class="mb-5">
+          <h2 class="main-section-title">HOẠT ĐỘNG NGOẠI KHÓA</h2>
+          <div class="activity-item">
+            <h3 class="activity-title">
+              Thành viên CLB truyền thông UMC - Trường Đại học Công nghiệp Thành
+              phố Hồ Chí Minh
+            </h3>
+            <p class="text-gray-600 italic mb-2">11/2021 - 05/2022</p>
+            <ul class="text-gray-700">
+              <li>
+                Đồng thực hiện lấy tin ảnh cho giải bóng chuyền cho trường
+              </li>
+              <li>Tham gia team building</li>
+            </ul>
+          </div>
+          <div class="activity-item">
+            <h3 class="activity-title">Tham gia cuộc thi ICPC Quốc gia 2021</h3>
+            <p class="text-gray-600 italic mb-2">19/02/2021</p>
+            <ul class="text-gray-700">
+              <li>
+                Tham gia cuộc thi lập trình quốc gia, rèn luyện kỹ năng giải
+                quyết vấn đề và tư duy thuật toán dưới áp lực thời gian.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
